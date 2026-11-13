@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Expo cache and local artifacts
+.expo/
+dist/
+web-build/
+
+# Native builds if generated locally
+*.orig.*
+[A-Z]*.bundle
+
+# Metro cache
+.metro-health-check*
+
+# Logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
