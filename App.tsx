@@ -24,6 +24,10 @@ import { authService, getStoredToken } from './src/services';
 import AuthScreen from './src/screens/AuthScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import QuizArenaScreen from './src/screens/QuizArenaScreen';
+import FruitSlicerScreen from './src/screens/FruitSlicerScreen';
+import KnifeHitScreen from './src/screens/KnifeHitScreen';
+import SpeedMathScreen from './src/screens/SpeedMathScreen';
+import SpeedLudoScreen from './src/screens/SpeedLudoScreen';
 import WalletScreen from './src/screens/WalletScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 
@@ -191,11 +195,37 @@ function AppContent() {
               }}
             />
           ) : currentScreen === 'ARENA' && activeRoom ? (
-            <QuizArenaScreen
-              room={activeRoom}
-              user={currentUser}
-              onExit={handleExitArena}
-            />
+            activeRoom.category === 'FRUIT_SLICER' ? (
+              <FruitSlicerScreen
+                room={activeRoom}
+                user={currentUser}
+                onExit={handleExitArena}
+              />
+            ) : activeRoom.category === 'KNIFE_HIT' ? (
+              <KnifeHitScreen
+                room={activeRoom}
+                user={currentUser}
+                onExit={handleExitArena}
+              />
+            ) : activeRoom.category === 'SPEED_MATH' ? (
+              <SpeedMathScreen
+                room={activeRoom}
+                user={currentUser}
+                onExit={handleExitArena}
+              />
+            ) : activeRoom.category === 'SPEED_LUDO' ? (
+              <SpeedLudoScreen
+                room={activeRoom}
+                user={currentUser}
+                onExit={handleExitArena}
+              />
+            ) : (
+              <QuizArenaScreen
+                room={activeRoom}
+                user={currentUser}
+                onExit={handleExitArena}
+              />
+            )
           ) : currentScreen === 'WALLET' ? (
             <WalletScreen
               onBack={() => switchScreen('HOME')}

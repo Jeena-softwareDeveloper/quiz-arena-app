@@ -37,3 +37,4 @@ EXPO_PUBLIC_SOCKET_URL=http://localhost:5000
 ```bash
 npx expo start
 ```
+

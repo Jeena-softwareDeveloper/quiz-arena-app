@@ -130,20 +130,47 @@ export default function HomeScreen({
     }
   };
 
+  const getCategoryLabel = (cat: string): string => {
+    switch (cat.toUpperCase()) {
+      case 'SPEED_LUDO':
+        return currentLang === 'ta' ? 'ஸ்பீடு லூடோ' : 'Speed Ludo';
+      case 'FRUIT_SLICER':
+        return currentLang === 'ta' ? 'ஃப்ரூட் ஸ்லைசர்' : 'Fruit Slicer';
+      case 'KNIFE_HIT':
+        return currentLang === 'ta' ? 'நைஃப் ஹிட்' : 'Knife Hit';
+      case 'SPEED_MATH':
+        return currentLang === 'ta' ? 'ஸ்பீடு மேத்ஸ்' : 'Speed Math';
+      case 'TAMIL_QUIZ':
+      case 'TNPSC':
+        return currentLang === 'ta' ? 'தமிழ் வினாடி வினா' : 'Tamil Quiz';
+      case 'CINEMA':
+        return currentLang === 'ta' ? 'சினிமா' : 'Cinema';
+      case 'GENERAL_GK':
+        return currentLang === 'ta' ? 'பொது அறிவு' : 'General GK';
+      default:
+        return cat;
+    }
+  };
+
   const getCategoryIcon = (cat: string): keyof typeof Ionicons.glyphMap => {
     switch (cat.toUpperCase()) {
+      case 'SPEED_LUDO':
+        return 'dice';
+      case 'FRUIT_SLICER':
+        return 'nutrition';
+      case 'KNIFE_HIT':
+        return 'flash';
+      case 'SPEED_MATH':
+        return 'calculator';
+      case 'TAMIL_QUIZ':
       case 'TNPSC':
-        return 'business';
+        return 'book';
       case 'CINEMA':
         return 'film';
-      case 'SCIENCE':
-        return 'flask';
-      case 'SPORTS':
-        return 'football';
       case 'GENERAL_GK':
         return 'bulb';
       default:
-        return 'grid';
+        return 'game-controller';
     }
   };
 
@@ -154,18 +181,26 @@ export default function HomeScreen({
         setCategories([
           { label: t('for_you'), value: 'RECOMMENDED', icon: 'sparkles' },
           ...apiCategories.map((c: string) => ({
-            label: c,
+            label: getCategoryLabel(c),
             value: c,
             icon: getCategoryIcon(c),
           })),
         ]);
       } catch (err: any) {
         console.warn('Using default categories:', err?.message || err);
-        const fallbackCats = ['TNPSC', 'CINEMA', 'GENERAL_GK', 'SCIENCE', 'TECH'];
+        const fallbackCats = [
+          'SPEED_LUDO',
+          'FRUIT_SLICER',
+          'KNIFE_HIT',
+          'SPEED_MATH',
+          'TAMIL_QUIZ',
+          'CINEMA',
+          'GENERAL_GK',
+        ];
         setCategories([
           { label: t('for_you'), value: 'RECOMMENDED', icon: 'sparkles' },
           ...fallbackCats.map((c: string) => ({
-            label: c,
+            label: getCategoryLabel(c),
             value: c,
             icon: getCategoryIcon(c),
           })),
@@ -706,98 +741,141 @@ export default function HomeScreen({
                 </Text>
               </View>
 
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 8 }}>
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={{ gap: 10, paddingRight: 8 }}
+              >
+                {/* 1. Speed Ludo */}
                 <TouchableOpacity
-                  onPress={() => setSelectedCategory('TNPSC')}
+                  onPress={() => setSelectedCategory('SPEED_LUDO')}
                   activeOpacity={0.8}
                   style={{
-                    flex: 1,
+                    width: 100,
                     alignItems: 'center',
                     backgroundColor: '#041f17',
-                    borderRadius: 16,
+                    borderRadius: 18,
                     borderWidth: 1.5,
                     borderColor: '#0b4a35',
                     paddingVertical: 12,
-                    paddingHorizontal: 4,
+                    paddingHorizontal: 6,
                   }}
                 >
-                  <View style={{ width: 44, height: 44, borderRadius: 12, backgroundColor: '#072e21', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
-                    <Ionicons name="business" size={22} color="#fbbf24" />
+                  <View style={{ width: 48, height: 48, borderRadius: 14, backgroundColor: '#072e21', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
+                    <Text style={{ fontSize: 26 }}>🎲</Text>
                   </View>
-                  <Text style={{ fontSize: 11, fontWeight: '800', color: '#ffffff', textAlign: 'center' }}>
-                    TNPSC
+                  <Text style={{ fontSize: 11, fontWeight: '800', color: '#ffffff', textAlign: 'center' }} numberOfLines={1}>
+                    {currentLang === 'ta' ? 'ஸ்பீடு லூடோ' : 'Speed Ludo'}
                   </Text>
+                  <View style={{ marginTop: 4, backgroundColor: '#063f2c', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 6 }}>
+                    <Text style={{ fontSize: 9, fontWeight: '800', color: '#34d399' }}>2m Turbo</Text>
+                  </View>
                 </TouchableOpacity>
 
+                {/* 2. Fruit Slicer */}
                 <TouchableOpacity
-                  onPress={() => setSelectedCategory('CINEMA')}
+                  onPress={() => setSelectedCategory('FRUIT_SLICER')}
                   activeOpacity={0.8}
                   style={{
-                    flex: 1,
+                    width: 100,
                     alignItems: 'center',
                     backgroundColor: '#041f17',
-                    borderRadius: 16,
+                    borderRadius: 18,
                     borderWidth: 1.5,
                     borderColor: '#0b4a35',
                     paddingVertical: 12,
-                    paddingHorizontal: 4,
+                    paddingHorizontal: 6,
                   }}
                 >
-                  <View style={{ width: 44, height: 44, borderRadius: 12, backgroundColor: '#072e21', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
-                    <Ionicons name="film" size={22} color="#ef4444" />
+                  <View style={{ width: 48, height: 48, borderRadius: 14, backgroundColor: '#072e21', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
+                    <Text style={{ fontSize: 26 }}>🍉</Text>
                   </View>
-                  <Text style={{ fontSize: 11, fontWeight: '800', color: '#ffffff', textAlign: 'center' }}>
-                    Cinema
+                  <Text style={{ fontSize: 11, fontWeight: '800', color: '#ffffff', textAlign: 'center' }} numberOfLines={1}>
+                    {currentLang === 'ta' ? 'ஃப்ரூட் ஸ்லைசர்' : 'Fruit Slicer'}
                   </Text>
+                  <View style={{ marginTop: 4, backgroundColor: '#451a03', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 6 }}>
+                    <Text style={{ fontSize: 9, fontWeight: '800', color: '#fbbf24' }}>60s Blitz</Text>
+                  </View>
                 </TouchableOpacity>
 
+                {/* 3. Knife Hit */}
                 <TouchableOpacity
-                  onPress={() => setSelectedCategory('GENERAL_GK')}
+                  onPress={() => setSelectedCategory('KNIFE_HIT')}
                   activeOpacity={0.8}
                   style={{
-                    flex: 1,
+                    width: 100,
                     alignItems: 'center',
                     backgroundColor: '#041f17',
-                    borderRadius: 16,
+                    borderRadius: 18,
                     borderWidth: 1.5,
                     borderColor: '#0b4a35',
                     paddingVertical: 12,
-                    paddingHorizontal: 4,
+                    paddingHorizontal: 6,
                   }}
                 >
-                  <View style={{ width: 44, height: 44, borderRadius: 12, backgroundColor: '#072e21', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
-                    <Ionicons name="globe" size={22} color="#38bdf8" />
+                  <View style={{ width: 48, height: 48, borderRadius: 14, backgroundColor: '#072e21', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
+                    <Text style={{ fontSize: 26 }}>🔪</Text>
                   </View>
-                  <Text style={{ fontSize: 11, fontWeight: '800', color: '#ffffff', textAlign: 'center' }}>
-                    General GK
+                  <Text style={{ fontSize: 11, fontWeight: '800', color: '#ffffff', textAlign: 'center' }} numberOfLines={1}>
+                    {currentLang === 'ta' ? 'நைஃப் ஹிட்' : 'Knife Hit'}
                   </Text>
+                  <View style={{ marginTop: 4, backgroundColor: '#450a0a', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 6 }}>
+                    <Text style={{ fontSize: 9, fontWeight: '800', color: '#f87171' }}>Target</Text>
+                  </View>
                 </TouchableOpacity>
 
+                {/* 4. Speed Math */}
                 <TouchableOpacity
-                  onPress={() => {
-                    const roomToJoin = rooms[0] || DEFAULT_RECOMMENDED_ROOMS[0];
-                    setSelectedRoomForCheckout(roomToJoin);
-                  }}
+                  onPress={() => setSelectedCategory('SPEED_MATH')}
                   activeOpacity={0.8}
                   style={{
-                    flex: 1,
+                    width: 100,
                     alignItems: 'center',
                     backgroundColor: '#041f17',
-                    borderRadius: 16,
+                    borderRadius: 18,
                     borderWidth: 1.5,
                     borderColor: '#0b4a35',
                     paddingVertical: 12,
-                    paddingHorizontal: 4,
+                    paddingHorizontal: 6,
                   }}
                 >
-                  <View style={{ width: 44, height: 44, borderRadius: 12, backgroundColor: '#072e21', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
-                    <Ionicons name="trophy" size={22} color="#facc15" />
+                  <View style={{ width: 48, height: 48, borderRadius: 14, backgroundColor: '#072e21', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
+                    <Text style={{ fontSize: 26 }}>⚡</Text>
                   </View>
-                  <Text style={{ fontSize: 10, fontWeight: '800', color: '#ffffff', textAlign: 'center' }} numberOfLines={1}>
-                    Daily Challenge
+                  <Text style={{ fontSize: 11, fontWeight: '800', color: '#ffffff', textAlign: 'center' }} numberOfLines={1}>
+                    {currentLang === 'ta' ? 'ஸ்பீடு மேத்ஸ்' : 'Speed Math'}
                   </Text>
+                  <View style={{ marginTop: 4, backgroundColor: '#172554', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 6 }}>
+                    <Text style={{ fontSize: 9, fontWeight: '800', color: '#60a5fa' }}>Mental 1v1</Text>
+                  </View>
                 </TouchableOpacity>
-              </View>
+
+                {/* 5. Tamil Quiz */}
+                <TouchableOpacity
+                  onPress={() => setSelectedCategory('TAMIL_QUIZ')}
+                  activeOpacity={0.8}
+                  style={{
+                    width: 100,
+                    alignItems: 'center',
+                    backgroundColor: '#041f17',
+                    borderRadius: 18,
+                    borderWidth: 1.5,
+                    borderColor: '#0b4a35',
+                    paddingVertical: 12,
+                    paddingHorizontal: 6,
+                  }}
+                >
+                  <View style={{ width: 48, height: 48, borderRadius: 14, backgroundColor: '#072e21', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
+                    <Text style={{ fontSize: 26 }}>📝</Text>
+                  </View>
+                  <Text style={{ fontSize: 11, fontWeight: '800', color: '#ffffff', textAlign: 'center' }} numberOfLines={1}>
+                    {currentLang === 'ta' ? 'தமிழ் வினாடி வினா' : 'Tamil Quiz'}
+                  </Text>
+                  <View style={{ marginTop: 4, backgroundColor: '#3b0764', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 6 }}>
+                    <Text style={{ fontSize: 9, fontWeight: '800', color: '#c084fc' }}>TNPSC & GK</Text>
+                  </View>
+                </TouchableOpacity>
+              </ScrollView>
             </View>
 
             {/* 3. Recent Withdrawals Section */}
