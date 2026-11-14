@@ -187,7 +187,7 @@ export default function FruitSlicerScreen({ room, user, onExit }: FruitSlicerPro
     <View
       style={{
         flex: 1,
-        backgroundColor: '#02160e',
+        backgroundColor: '#120a01',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -202,9 +202,9 @@ export default function FruitSlicerScreen({ room, user, onExit }: FruitSlicerPro
           paddingHorizontal: 20,
           paddingTop: 48,
           paddingBottom: 16,
-          backgroundColor: '#032417',
+          backgroundColor: '#181002',
           borderBottomWidth: 1,
-          borderBottomColor: '#0b4a35',
+          borderBottomColor: '#4d3800',
         }}
       >
         <TouchableOpacity
@@ -213,7 +213,7 @@ export default function FruitSlicerScreen({ room, user, onExit }: FruitSlicerPro
             flexDirection: 'row',
             alignItems: 'center',
             gap: 6,
-            backgroundColor: '#053120',
+            backgroundColor: '#322300',
             paddingHorizontal: 12,
             paddingVertical: 6,
             borderRadius: 14,
@@ -234,7 +234,7 @@ export default function FruitSlicerScreen({ room, user, onExit }: FruitSlicerPro
             style={{
               fontSize: 22,
               fontWeight: '900',
-              color: timeLeft <= 10 ? '#ef4444' : '#10b981',
+              color: timeLeft <= 10 ? '#ef4444' : '#f59e0b',
             }}
           >
             {timeLeft}s
@@ -250,7 +250,7 @@ export default function FruitSlicerScreen({ room, user, onExit }: FruitSlicerPro
             </Text>
           </View>
           {combo > 1 && (
-            <Text style={{ fontSize: 11, fontWeight: '900', color: '#34d399' }}>
+            <Text style={{ fontSize: 11, fontWeight: '900', color: '#fbbf24' }}>
               Combo x{combo} 🔥
             </Text>
           )}
@@ -262,15 +262,15 @@ export default function FruitSlicerScreen({ room, user, onExit }: FruitSlicerPro
         style={{
           alignSelf: 'center',
           marginTop: 12,
-          backgroundColor: '#042719',
+          backgroundColor: '#1c1303',
           paddingHorizontal: 14,
           paddingVertical: 4,
           borderRadius: 20,
           borderWidth: 1,
-          borderColor: '#0b4a35',
+          borderColor: '#4d3800',
         }}
       >
-        <Text style={{ color: '#34d399', fontSize: 11, fontWeight: '800' }}>
+        <Text style={{ color: '#fbbf24', fontSize: 11, fontWeight: '800' }}>
           🍉 {room.title || 'Fruit Slicer 60s Blitz'} • ₹{room.prizePool} Prize
         </Text>
       </View>
@@ -347,12 +347,12 @@ export default function FruitSlicerScreen({ room, user, onExit }: FruitSlicerPro
             style={{
               width: '100%',
               maxWidth: 360,
-              backgroundColor: '#042217',
+              backgroundColor: '#191102',
               borderRadius: 24,
               padding: 28,
               alignItems: 'center',
               borderWidth: 1,
-              borderColor: '#0b4a35',
+              borderColor: '#4d3800',
             }}
           >
             <Text style={{ fontSize: 44, marginBottom: 8 }}>🏆</Text>
@@ -366,7 +366,7 @@ export default function FruitSlicerScreen({ room, user, onExit }: FruitSlicerPro
             <View
               style={{
                 marginVertical: 20,
-                backgroundColor: '#073322',
+                backgroundColor: '#362600',
                 paddingHorizontal: 28,
                 paddingVertical: 12,
                 borderRadius: 16,
@@ -381,7 +381,7 @@ export default function FruitSlicerScreen({ room, user, onExit }: FruitSlicerPro
               onPress={onExit}
               style={{
                 width: '100%',
-                backgroundColor: '#10b981',
+                backgroundColor: '#f59e0b',
                 paddingVertical: 14,
                 borderRadius: 16,
                 alignItems: 'center',
@@ -397,3 +397,4 @@ export default function FruitSlicerScreen({ room, user, onExit }: FruitSlicerPro
     </View>
   );
 }
+

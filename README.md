@@ -1,6 +1,6 @@
 # quiz-arena-app
 
-Cross-platform React Native & Expo mobile application for **Quiz Arena** — the Tamil Nadu & multi-category skill tournament platform.
+Cross-platform React Native & Expo mobile application for **Set Quick Trade** — the Tamil Nadu & multi-category skill tournament platform.
 
 ## 🚀 Features
 

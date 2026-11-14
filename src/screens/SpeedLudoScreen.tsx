@@ -112,7 +112,7 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#02160e', justifyContent: 'space-between', paddingBottom: 36 }}>
+    <View style={{ flex: 1, backgroundColor: '#120a01', justifyContent: 'space-between', paddingBottom: 36 }}>
       {/* Top Header */}
       <View
         style={{
@@ -122,9 +122,9 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
           paddingHorizontal: 20,
           paddingTop: 48,
           paddingBottom: 16,
-          backgroundColor: '#032417',
+          backgroundColor: '#181002',
           borderBottomWidth: 1,
-          borderBottomColor: '#0b4a35',
+          borderBottomColor: '#4a3500',
         }}
       >
         <TouchableOpacity
@@ -133,7 +133,7 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
             flexDirection: 'row',
             alignItems: 'center',
             gap: 6,
-            backgroundColor: '#053120',
+            backgroundColor: '#322300',
             paddingHorizontal: 12,
             paddingVertical: 6,
             borderRadius: 14,
@@ -150,7 +150,7 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
           <Text style={{ fontSize: 10, color: '#94a3b8', fontWeight: '800' }}>
             {currentLang === 'ta' ? 'சுற்றுகள் மீதம்' : 'TURNS LEFT'}
           </Text>
-          <Text style={{ fontSize: 18, fontWeight: '900', color: '#10b981' }}>
+          <Text style={{ fontSize: 18, fontWeight: '900', color: '#f59e0b' }}>
             {turnsLeft} / 24
           </Text>
         </View>
@@ -170,17 +170,17 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
         <View
           style={{
             alignItems: 'center',
-            backgroundColor: isPlayerTurn ? '#063f2c' : '#042217',
+            backgroundColor: isPlayerTurn ? '#3b2900' : '#191102',
             paddingHorizontal: 20,
             paddingVertical: 12,
             borderRadius: 18,
             borderWidth: 1.5,
-            borderColor: isPlayerTurn ? '#10b981' : '#0b4a35',
+            borderColor: isPlayerTurn ? '#f59e0b' : '#4a3500',
             flex: 1,
             marginRight: 8,
           }}
         >
-          <View style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#10b981', alignItems: 'center', justifyContent: 'center', marginBottom: 4 }}>
+          <View style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#f59e0b', alignItems: 'center', justifyContent: 'center', marginBottom: 4 }}>
             <Text style={{ color: '#000000', fontWeight: '900', fontSize: 14 }}>YOU</Text>
           </View>
           <Text style={{ color: '#ffffff', fontSize: 12, fontWeight: '800' }}>
@@ -197,12 +197,12 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
         <View
           style={{
             alignItems: 'center',
-            backgroundColor: !isPlayerTurn ? '#063f2c' : '#042217',
+            backgroundColor: !isPlayerTurn ? '#3b2900' : '#191102',
             paddingHorizontal: 20,
             paddingVertical: 12,
             borderRadius: 18,
             borderWidth: 1.5,
-            borderColor: !isPlayerTurn ? '#10b981' : '#0b4a35',
+            borderColor: !isPlayerTurn ? '#f59e0b' : '#4a3500',
             flex: 1,
             marginLeft: 8,
           }}
@@ -223,11 +223,11 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
           style={{
             width: '100%',
             maxWidth: 360,
-            backgroundColor: '#042217',
+            backgroundColor: '#191102',
             borderRadius: 20,
             padding: 16,
             borderWidth: 1,
-            borderColor: '#0b4a35',
+            borderColor: '#4a3500',
           }}
         >
           <Text style={{ color: '#94a3b8', fontSize: 11, fontWeight: '800', textAlign: 'center', marginBottom: 12 }}>
@@ -237,11 +237,11 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
           {/* Player Progress Bar */}
           <View style={{ marginBottom: 12 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4 }}>
-              <Text style={{ color: '#34d399', fontSize: 11, fontWeight: '800' }}>Your Token</Text>
-              <Text style={{ color: '#34d399', fontSize: 11, fontWeight: '800' }}>{playerPosition} / 28</Text>
+              <Text style={{ color: '#fbbf24', fontSize: 11, fontWeight: '800' }}>Your Token</Text>
+              <Text style={{ color: '#fbbf24', fontSize: 11, fontWeight: '800' }}>{playerPosition} / 28</Text>
             </View>
-            <View style={{ height: 12, backgroundColor: '#073221', borderRadius: 6, overflow: 'hidden' }}>
-              <View style={{ height: '100%', width: `${Math.min(100, (playerPosition / 28) * 100)}%`, backgroundColor: '#10b981', borderRadius: 6 }} />
+            <View style={{ height: 12, backgroundColor: '#352500', borderRadius: 6, overflow: 'hidden' }}>
+              <View style={{ height: '100%', width: `${Math.min(100, (playerPosition / 28) * 100)}%`, backgroundColor: '#f59e0b', borderRadius: 6 }} />
             </View>
           </View>
 
@@ -251,7 +251,7 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
               <Text style={{ color: '#60a5fa', fontSize: 11, fontWeight: '800' }}>Opponent Token</Text>
               <Text style={{ color: '#60a5fa', fontSize: 11, fontWeight: '800' }}>{opponentPosition} / 28</Text>
             </View>
-            <View style={{ height: 12, backgroundColor: '#073221', borderRadius: 6, overflow: 'hidden' }}>
+            <View style={{ height: 12, backgroundColor: '#352500', borderRadius: 6, overflow: 'hidden' }}>
               <View style={{ height: '100%', width: `${Math.min(100, (opponentPosition / 28) * 100)}%`, backgroundColor: '#3b82f6', borderRadius: 6 }} />
             </View>
           </View>
@@ -260,7 +260,7 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
 
       {/* Bottom Dice Roll Section */}
       <View style={{ alignItems: 'center', gap: 12 }}>
-        <Text style={{ color: isPlayerTurn ? '#34d399' : '#94a3b8', fontSize: 14, fontWeight: '900' }}>
+        <Text style={{ color: isPlayerTurn ? '#fbbf24' : '#94a3b8', fontSize: 14, fontWeight: '900' }}>
           {isPlayerTurn ? (currentLang === 'ta' ? '👉 உங்கள் முறை! தாயக்கட்டையை உருட்டுங்கள்' : '👉 YOUR TURN! ROLL THE DICE') : (currentLang === 'ta' ? 'எதிராளி விளையாடுகிறார்...' : 'Opponent is thinking...')}
         </Text>
 
@@ -273,12 +273,12 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
             width: 90,
             height: 90,
             borderRadius: 24,
-            backgroundColor: isPlayerTurn ? '#10b981' : '#1e293b',
+            backgroundColor: isPlayerTurn ? '#f59e0b' : '#1e293b',
             alignItems: 'center',
             justifyContent: 'center',
             borderWidth: 3,
-            borderColor: isPlayerTurn ? '#34d399' : '#334155',
-            shadowColor: '#10b981',
+            borderColor: isPlayerTurn ? '#fbbf24' : '#334155',
+            shadowColor: '#f59e0b',
             shadowOpacity: isPlayerTurn ? 0.6 : 0,
             shadowRadius: 16,
             elevation: 8,
@@ -313,12 +313,12 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
             style={{
               width: '100%',
               maxWidth: 360,
-              backgroundColor: '#042217',
+              backgroundColor: '#191102',
               borderRadius: 24,
               padding: 28,
               alignItems: 'center',
               borderWidth: 1,
-              borderColor: '#0b4a35',
+              borderColor: '#4a3500',
             }}
           >
             <Text style={{ fontSize: 44, marginBottom: 8 }}>
@@ -343,7 +343,7 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
               onPress={onExit}
               style={{
                 width: '100%',
-                backgroundColor: '#10b981',
+                backgroundColor: '#f59e0b',
                 paddingVertical: 14,
                 borderRadius: 16,
                 alignItems: 'center',
@@ -359,3 +359,4 @@ export default function SpeedLudoScreen({ room, user, onExit }: SpeedLudoProps) 
     </View>
   );
 }
+

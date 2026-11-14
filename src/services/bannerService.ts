@@ -16,16 +16,16 @@ export interface MobileBanner {
 }
 
 export const DEFAULT_FALLBACK_BANNER: MobileBanner = {
-  id: 'default-tnpsc-1',
-  title: 'TNPSC Quiz Challenge',
-  titleTamil: 'TNPSC வினாடி வினா சவால்',
-  subtitle: 'Test Your Knowledge • Win Real Cash',
-  subtitleTamil: 'உங்கள் அறிவை சோதித்து ரொக்கப் பரிசு வெல்லுங்கள்',
+  id: 'default-quicktrade-1',
+  title: 'Predict Green or Red',
+  titleTamil: 'பச்சை அல்லது சிவப்பு கணிக்கவும்',
+  subtitle: 'Guess the next price move and earn up to 90% profit',
+  subtitleTamil: 'அடுத்த விலையை கணித்து 90% வரை லாபம் ஈட்டுங்கள்',
   imageUrl: '',
-  actionType: 'OPEN_CATEGORY',
-  actionTarget: 'TNPSC',
-  actionText: 'Play Now',
-  actionTextTamil: 'விளையாடு',
+  actionType: 'PLAY_NOW',
+  actionTarget: 'QUICK_TRADE',
+  actionText: 'Trade Now',
+  actionTextTamil: 'வர்த்தகம் செய்',
   isActive: true,
   order: 1,
 };

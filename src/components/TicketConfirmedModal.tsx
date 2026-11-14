@@ -57,7 +57,7 @@ export const TicketConfirmedModal: React.FC<TicketConfirmedModalProps> = ({
           style={{
             width: '100%',
             maxWidth: 380,
-            backgroundColor: '#071f17',
+            backgroundColor: '#251a02',
             borderRadius: 24,
             padding: 24,
             alignItems: 'center',
@@ -75,19 +75,19 @@ export const TicketConfirmedModal: React.FC<TicketConfirmedModalProps> = ({
               width: 64,
               height: 64,
               borderRadius: 32,
-              backgroundColor: '#062d21',
+              backgroundColor: '#261b05',
               borderWidth: 2,
-              borderColor: '#10b981',
+              borderColor: '#f59e0b',
               alignItems: 'center',
               justifyContent: 'center',
               marginTop: -8,
               marginBottom: 12,
-              shadowColor: '#10b981',
+              shadowColor: '#f59e0b',
               shadowOpacity: 0.6,
               shadowRadius: 12,
             }}
           >
-            <Ionicons name="checkmark-circle" size={40} color="#10b981" />
+            <Ionicons name="checkmark-circle" size={40} color="#f59e0b" />
           </View>
 
           <Text style={{ fontSize: 18, fontWeight: '900', color: '#ffffff', textAlign: 'center', letterSpacing: -0.3 }}>
@@ -101,37 +101,37 @@ export const TicketConfirmedModal: React.FC<TicketConfirmedModalProps> = ({
           <View
             style={{
               width: '100%',
-              backgroundColor: '#052017',
+              backgroundColor: '#1a1103',
               borderRadius: 18,
               borderWidth: 1.5,
-              borderColor: '#0f5139',
+              borderColor: '#523a00',
               padding: 16,
               marginBottom: 16,
             }}
           >
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingBottom: 10, borderBottomWidth: 1, borderBottomColor: '#0a3827', borderStyle: 'dashed' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingBottom: 10, borderBottomWidth: 1, borderBottomColor: '#3f2e00', borderStyle: 'dashed' }}>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
-                <Ionicons name="ticket" size={16} color="#10b981" />
+                <Ionicons name="ticket" size={16} color="#f59e0b" />
                 <Text style={{ fontSize: 12, fontWeight: '700', color: '#cbd5e1' }}>{t('ticket_id')}</Text>
               </View>
-              <Text style={{ fontSize: 12, fontFamily: 'monospace', fontWeight: '800', color: '#34d399', backgroundColor: '#063728', borderWidth: 1, borderColor: '#10b981', paddingHorizontal: 8, paddingVertical: 2, borderRadius: 6 }}>
+              <Text style={{ fontSize: 12, fontFamily: 'monospace', fontWeight: '800', color: '#fbbf24', backgroundColor: '#342400', borderWidth: 1, borderColor: '#f59e0b', paddingHorizontal: 8, paddingVertical: 2, borderRadius: 6 }}>
                 {ticketData.ticketId}
               </Text>
             </View>
 
             <View style={{ paddingVertical: 10 }}>
-              <Text style={{ fontSize: 10, textTransform: 'uppercase', fontWeight: '700', color: '#6ee7b7' }}>
+              <Text style={{ fontSize: 10, textTransform: 'uppercase', fontWeight: '700', color: '#fcd34d' }}>
                 {ticketData.category} Arena
               </Text>
               <Text style={{ fontSize: 15, fontWeight: '700', color: '#ffffff', marginTop: 2 }}>
                 {ticketData.roomTitle}
               </Text>
-              <View style={{ marginTop: 8, paddingTop: 8, borderTopWidth: 1, borderTopColor: '#0a3827', gap: 6 }}>
+              <View style={{ marginTop: 8, paddingTop: 8, borderTopWidth: 1, borderTopColor: '#3f2e00', gap: 6 }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
-                    <Ionicons name="play" size={11} color="#10b981" />
+                    <Ionicons name="play" size={11} color="#f59e0b" />
                     <Text style={{ fontSize: 11, color: '#94a3b8' }}>
-                      {t('starts_at', 'Starts')}: <Text style={{ fontWeight: '700', color: '#34d399' }}>{formatTime(ticketData.scheduledStartTime)}</Text>
+                      {t('starts_at', 'Starts')}: <Text style={{ fontWeight: '700', color: '#fbbf24' }}>{formatTime(ticketData.scheduledStartTime)}</Text>
                     </Text>
                   </View>
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
@@ -147,9 +147,9 @@ export const TicketConfirmedModal: React.FC<TicketConfirmedModalProps> = ({
               </View>
             </View>
 
-            <View style={{ paddingTop: 8, borderTopWidth: 1, borderTopColor: '#0a3827', borderStyle: 'dashed', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={{ paddingTop: 8, borderTopWidth: 1, borderTopColor: '#3f2e00', borderStyle: 'dashed', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
               <Text style={{ fontSize: 11, color: '#94a3b8', fontWeight: '500' }}>Entry Fee Paid</Text>
-              <Text style={{ fontSize: 12, fontWeight: '800', color: '#34d399' }}>₹{ticketData.entryFee} (Wallet)</Text>
+              <Text style={{ fontSize: 12, fontWeight: '800', color: '#fbbf24' }}>₹{ticketData.entryFee} (Wallet)</Text>
             </View>
           </View>
 
@@ -166,14 +166,14 @@ export const TicketConfirmedModal: React.FC<TicketConfirmedModalProps> = ({
             activeOpacity={0.85}
             style={{
               width: '100%',
-              backgroundColor: '#10b981',
+              backgroundColor: '#f59e0b',
               borderBottomWidth: 4,
-              borderBottomColor: '#047857',
+              borderBottomColor: '#b45309',
               borderRadius: 16,
               paddingVertical: 13,
               alignItems: 'center',
               justifyContent: 'center',
-              shadowColor: '#10b981',
+              shadowColor: '#f59e0b',
               shadowOffset: { width: 0, height: 6 },
               shadowOpacity: 0.5,
               shadowRadius: 16,

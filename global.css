@@ -6,7 +6,7 @@
 
 /* Smooth Text Rendering across web and mobile */
 html, body, #root {
-  background-color: #010805;
+  background-color: #030705;
   color: #ffffff;
   font-family: 'Plus Jakarta Sans', 'Inter', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;

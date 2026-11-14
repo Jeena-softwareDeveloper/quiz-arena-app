@@ -274,7 +274,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
   const pendingCount = Math.max(0, maxPlayers - joinedCount);
 
   return (
-    <View style={{ flex: 1, height: '100%', minHeight: 0, backgroundColor: '#03130e', overflow: 'hidden' }}>
+    <View style={{ flex: 1, height: '100%', minHeight: 0, backgroundColor: '#120a01', overflow: 'hidden' }}>
       {/* Top Header Bar across all states (Matching User Screenshots) */}
       <View
         style={{
@@ -284,9 +284,9 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
           paddingTop: 4,
           paddingBottom: 6,
           paddingHorizontal: 16,
-          backgroundColor: '#041711',
+          backgroundColor: '#140c02',
           borderBottomWidth: 1,
-          borderBottomColor: '#0a3827',
+          borderBottomColor: '#3f2e00',
         }}
       >
         {/* Exit Button */}
@@ -300,7 +300,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
             borderRadius: 12,
             backgroundColor: '#06261a',
             borderWidth: 1,
-            borderColor: '#10b981',
+            borderColor: '#f59e0b',
           }}
           onPress={onExit}
           activeOpacity={0.7}
@@ -329,16 +329,16 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
         {/* Right Score Pill */}
         <View
           style={{
-            backgroundColor: '#052017',
+            backgroundColor: '#1a1103',
             borderWidth: 1.5,
-            borderColor: '#10b981',
+            borderColor: '#f59e0b',
             borderRadius: 12,
             paddingHorizontal: 12,
             paddingVertical: 4,
             alignItems: 'center',
           }}
         >
-          <Text style={{ fontSize: 9, fontWeight: '800', color: '#6ee7b7', textTransform: 'uppercase', letterSpacing: 0.5 }}>
+          <Text style={{ fontSize: 9, fontWeight: '800', color: '#fcd34d', textTransform: 'uppercase', letterSpacing: 0.5 }}>
             SCORE
           </Text>
           <Text style={{ fontSize: 14, fontWeight: '900', color: '#ffffff' }}>{myScore}</Text>
@@ -349,7 +349,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
       {/* STATE 1: LOBBY / WAITING FOR COMPETITORS (Matching Image 1)               */}
       {/* ========================================================================= */}
       {gameState === 'WAITING' && (
-        <View style={{ flex: 1, height: '100%', minHeight: 0, backgroundColor: '#03130e', justifyContent: 'space-between', overflow: 'hidden' }}>
+        <View style={{ flex: 1, height: '100%', minHeight: 0, backgroundColor: '#120a01', justifyContent: 'space-between', overflow: 'hidden' }}>
           {/* Scrollable Center Content */}
           <ScrollView
             style={{ flex: 1, width: '100%' }}
@@ -368,20 +368,20 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                 flexDirection: 'row',
                 alignItems: 'center',
                 gap: 6,
-                backgroundColor: '#072b1e',
+                backgroundColor: '#2d1f00',
                 borderWidth: 1.5,
-                borderColor: '#10b981',
+                borderColor: '#f59e0b',
                 paddingHorizontal: 14,
                 paddingVertical: 5,
                 borderRadius: 20,
                 marginTop: 4,
-                shadowColor: '#10b981',
+                shadowColor: '#f59e0b',
                 shadowOpacity: 0.4,
                 shadowRadius: 8,
               }}
             >
-              <Ionicons name="people" size={14} color="#10b981" />
-              <Text style={{ color: '#a7f3d0', fontSize: 12, fontWeight: '700' }}>
+              <Ionicons name="people" size={14} color="#f59e0b" />
+              <Text style={{ color: '#fde68a', fontSize: 12, fontWeight: '700' }}>
                 {t('matchmaking', 'Matchmaking in progress')}
               </Text>
             </Animated.View>
@@ -404,7 +404,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                   height: 120,
                   borderRadius: 60,
                   borderWidth: 2,
-                  borderColor: '#10b981',
+                  borderColor: '#f59e0b',
                   transform: [
                     {
                       scale: radarAnim.interpolate({
@@ -428,7 +428,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                   height: 120,
                   borderRadius: 60,
                   borderWidth: 2,
-                  borderColor: '#34d399',
+                  borderColor: '#fbbf24',
                   transform: [
                     {
                       scale: radarAnim2.interpolate({
@@ -450,12 +450,12 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                   width: 122,
                   height: 122,
                   borderRadius: 61,
-                  backgroundColor: '#042217',
+                  backgroundColor: '#191102',
                   borderWidth: 4,
-                  borderColor: '#10b981',
+                  borderColor: '#f59e0b',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  shadowColor: '#10b981',
+                  shadowColor: '#f59e0b',
                   shadowOpacity: 0.6,
                   shadowRadius: 18,
                   elevation: 8,
@@ -463,9 +463,9 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
               >
                 <Text style={{ fontSize: 36, fontWeight: '900', color: '#ffffff', letterSpacing: -0.5 }}>
                   {joinedCount}
-                  <Text style={{ fontSize: 16, fontWeight: '700', color: '#6ee7b7' }}>/{maxPlayers}</Text>
+                  <Text style={{ fontSize: 16, fontWeight: '700', color: '#fcd34d' }}>/{maxPlayers}</Text>
                 </Text>
-                <Text style={{ fontSize: 10, fontWeight: '800', color: '#a7f3d0', textTransform: 'uppercase', letterSpacing: 0.5, marginTop: 1 }}>
+                <Text style={{ fontSize: 10, fontWeight: '800', color: '#fde68a', textTransform: 'uppercase', letterSpacing: 0.5, marginTop: 1 }}>
                   {t('players_joined', 'Players Joined')}
                 </Text>
               </View>
@@ -501,21 +501,21 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
             <View
               style={{
                 width: '100%',
-                backgroundColor: '#071f17',
+                backgroundColor: '#251a02',
                 borderWidth: 1.5,
-                borderColor: '#10b981',
+                borderColor: '#f59e0b',
                 borderRadius: 20,
                 padding: 16,
                 gap: 8,
-                shadowColor: '#10b981',
+                shadowColor: '#f59e0b',
                 shadowOpacity: 0.25,
                 shadowRadius: 14,
               }}
             >
               <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
-                  <Ionicons name="people" size={14} color="#10b981" />
-                  <Text style={{ fontSize: 11, fontWeight: '800', color: '#a7f3d0', textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                  <Ionicons name="people" size={14} color="#f59e0b" />
+                  <Text style={{ fontSize: 11, fontWeight: '800', color: '#fde68a', textTransform: 'uppercase', letterSpacing: 0.5 }}>
                     {t('participants_ready', 'PARTICIPANTS READY')} ({joinedCount}/{maxPlayers})
                   </Text>
                 </View>
@@ -539,13 +539,13 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                       paddingVertical: 7,
                       paddingHorizontal: 10,
                       borderRadius: 12,
-                      backgroundColor: isSelf ? '#063728' : 'transparent',
+                      backgroundColor: isSelf ? '#342400' : 'transparent',
                       borderWidth: isSelf ? 1 : 0,
-                      borderColor: '#10b981',
+                      borderColor: '#f59e0b',
                     }}
                   >
                     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                      <Ionicons name="person" size={15} color={isSelf ? '#10b981' : '#64748b'} />
+                      <Ionicons name="person" size={15} color={isSelf ? '#f59e0b' : '#64748b'} />
                       <Text style={{ color: '#ffffff', fontSize: 13, fontWeight: '700' }}>
                         {p.name} {isSelf ? '(You)' : ''}
                       </Text>
@@ -556,8 +556,8 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                         width: 8,
                         height: 8,
                         borderRadius: 4,
-                        backgroundColor: '#10b981',
-                        shadowColor: '#10b981',
+                        backgroundColor: '#f59e0b',
+                        shadowColor: '#f59e0b',
                         shadowOpacity: 0.9,
                         shadowRadius: 6,
                       }}
@@ -578,7 +578,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
               paddingBottom: Platform.OS === 'ios' ? 24 : 14,
               backgroundColor: '#02120b',
               borderTopWidth: 1,
-              borderTopColor: '#0a3827',
+              borderTopColor: '#3f2e00',
               shadowColor: '#000000',
               shadowOffset: { width: 0, height: -4 },
               shadowOpacity: 0.5,
@@ -590,9 +590,9 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
               onPress={handleManualStart}
               activeOpacity={0.85}
               style={{
-                backgroundColor: '#10b981',
+                backgroundColor: '#f59e0b',
                 borderBottomWidth: 4,
-                borderBottomColor: '#047857',
+                borderBottomColor: '#b45309',
                 borderRadius: 16,
                 paddingVertical: 14,
                 width: '100%',
@@ -600,7 +600,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                 justifyContent: 'center',
                 flexDirection: 'row',
                 gap: 8,
-                shadowColor: '#10b981',
+                shadowColor: '#f59e0b',
                 shadowOffset: { width: 0, height: 4 },
                 shadowOpacity: 0.4,
                 shadowRadius: 10,
@@ -630,11 +630,11 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                 width: 140,
                 height: 16,
                 borderRadius: 8,
-                backgroundColor: '#064e3b',
+                backgroundColor: '#78350f',
                 borderWidth: 2,
-                borderColor: '#10b981',
+                borderColor: '#f59e0b',
                 marginTop: -8,
-                shadowColor: '#10b981',
+                shadowColor: '#f59e0b',
                 shadowOpacity: 0.9,
                 shadowRadius: 20,
               }}
@@ -647,23 +647,23 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
               flexDirection: 'row',
               alignItems: 'center',
               gap: 8,
-              backgroundColor: '#072b1e',
+              backgroundColor: '#2d1f00',
               borderWidth: 1.5,
-              borderColor: '#10b981',
+              borderColor: '#f59e0b',
               paddingHorizontal: 16,
               paddingVertical: 7,
               borderRadius: 16,
               marginTop: 16,
-              shadowColor: '#10b981',
+              shadowColor: '#f59e0b',
               shadowOpacity: 0.4,
               shadowRadius: 12,
             }}
           >
-            <Text style={{ color: '#10b981', fontWeight: '900', fontSize: 14 }}>&lt;&lt;&lt;</Text>
+            <Text style={{ color: '#f59e0b', fontWeight: '900', fontSize: 14 }}>&lt;&lt;&lt;</Text>
             <Text style={{ color: '#ffffff', fontSize: 13, fontWeight: '900', letterSpacing: 1 }}>
               BATTLE STARTS IN
             </Text>
-            <Text style={{ color: '#10b981', fontWeight: '900', fontSize: 14 }}>&gt;&gt;&gt;</Text>
+            <Text style={{ color: '#f59e0b', fontWeight: '900', fontSize: 14 }}>&gt;&gt;&gt;</Text>
           </View>
 
           {/* Giant Neon Countdown Clock Ring */}
@@ -672,13 +672,13 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
               width: 170,
               height: 170,
               borderRadius: 85,
-              backgroundColor: '#052017',
+              backgroundColor: '#1a1103',
               borderWidth: 5,
-              borderColor: '#10b981',
+              borderColor: '#f59e0b',
               justifyContent: 'center',
               alignItems: 'center',
               marginVertical: 24,
-              shadowColor: '#10b981',
+              shadowColor: '#f59e0b',
               shadowOpacity: 0.9,
               shadowRadius: 28,
               elevation: 12,
@@ -689,7 +689,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                 fontSize: 96,
                 fontWeight: '900',
                 color: '#ffffff',
-                textShadowColor: '#10b981',
+                textShadowColor: '#f59e0b',
                 textShadowRadius: 30,
                 textShadowOffset: { width: 0, height: 0 },
               }}
@@ -706,7 +706,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
               gap: 8,
               backgroundColor: '#06261a',
               borderWidth: 1.5,
-              borderColor: '#10b981',
+              borderColor: '#f59e0b',
               paddingHorizontal: 18,
               paddingVertical: 10,
               borderRadius: 16,
@@ -744,8 +744,8 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                         borderRadius: 6,
                         backgroundColor: isActive ? '#ffffff' : '#0a3d2e',
                         borderWidth: isActive ? 3 : 0,
-                        borderColor: '#10b981',
-                        shadowColor: isActive ? '#10b981' : 'transparent',
+                        borderColor: '#f59e0b',
+                        shadowColor: isActive ? '#f59e0b' : 'transparent',
                         shadowOpacity: isActive ? 0.9 : 0,
                         shadowRadius: 6,
                       }}
@@ -782,13 +782,13 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
           {/* Dynamic Question Card with Thanjavur Temple Landmark Image */}
           <View
             style={{
-              backgroundColor: '#071f17',
+              backgroundColor: '#251a02',
               borderRadius: 20,
               borderWidth: 1.5,
-              borderColor: '#10b981',
+              borderColor: '#f59e0b',
               padding: 16,
               marginBottom: 14,
-              shadowColor: '#10b981',
+              shadowColor: '#f59e0b',
               shadowOpacity: 0.35,
               shadowRadius: 18,
             }}
@@ -802,9 +802,9 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                 </Text>
 
                 {/* Tamil Translation with Green Bar */}
-                <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 6, marginTop: 10, paddingTop: 10, borderTopWidth: 1, borderTopColor: '#0a3827' }}>
-                  <View style={{ width: 3, height: 16, backgroundColor: '#10b981', borderRadius: 1.5, marginTop: 2 }} />
-                  <Text style={{ color: '#a7f3d0', fontSize: 12, fontWeight: '600', lineHeight: 18, flex: 1 }}>
+                <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 6, marginTop: 10, paddingTop: 10, borderTopWidth: 1, borderTopColor: '#3f2e00' }}>
+                  <View style={{ width: 3, height: 16, backgroundColor: '#f59e0b', borderRadius: 1.5, marginTop: 2 }} />
+                  <Text style={{ color: '#fde68a', fontSize: 12, fontWeight: '600', lineHeight: 18, flex: 1 }}>
                     {activeQuestion.questionTextTamil || 'தஞ்சை பெரிய கோயிலை கட்டிய சோழ மன்னர் யார்?'}
                   </Text>
                 </View>
@@ -826,16 +826,16 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                   onPress={() => handleSelectOption(idx)}
                   activeOpacity={0.85}
                   style={{
-                    backgroundColor: isSelected ? '#10b981' : '#052017',
+                    backgroundColor: isSelected ? '#f59e0b' : '#1a1103',
                     borderWidth: 1.5,
-                    borderColor: isSelected ? '#34d399' : '#0f5139',
+                    borderColor: isSelected ? '#fbbf24' : '#523a00',
                     borderRadius: 16,
                     paddingVertical: 13,
                     paddingHorizontal: 14,
                     flexDirection: 'row',
                     alignItems: 'center',
                     gap: 12,
-                    shadowColor: isSelected ? '#10b981' : 'transparent',
+                    shadowColor: isSelected ? '#f59e0b' : 'transparent',
                     shadowOpacity: isSelected ? 0.7 : 0,
                     shadowRadius: 16,
                     elevation: isSelected ? 8 : 0,
@@ -847,16 +847,16 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                       width: 32,
                       height: 32,
                       borderRadius: 10,
-                      backgroundColor: isSelected ? '#052017' : '#072e21',
+                      backgroundColor: isSelected ? '#1a1103' : '#312200',
                       borderWidth: 1,
-                      borderColor: isSelected ? '#a7f3d0' : '#10b981',
+                      borderColor: isSelected ? '#fde68a' : '#f59e0b',
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
                   >
                     <Text
                       style={{
-                        color: isSelected ? '#34d399' : '#ffffff',
+                        color: isSelected ? '#fbbf24' : '#ffffff',
                         fontSize: 13,
                         fontWeight: '900',
                       }}
@@ -892,15 +892,15 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                 flexDirection: 'row',
                 justifyContent: 'center',
                 gap: 8,
-                backgroundColor: answerFeedback.isCorrect ? '#064e3b' : '#4c0519',
+                backgroundColor: answerFeedback.isCorrect ? '#78350f' : '#4c0519',
                 borderWidth: 1.5,
-                borderColor: answerFeedback.isCorrect ? '#10b981' : '#f43f5e',
+                borderColor: answerFeedback.isCorrect ? '#f59e0b' : '#f43f5e',
               }}
             >
               <Ionicons
                 name={answerFeedback.isCorrect ? 'flash' : 'close-circle'}
                 size={18}
-                color={answerFeedback.isCorrect ? '#34d399' : '#fda4af'}
+                color={answerFeedback.isCorrect ? '#fbbf24' : '#fda4af'}
               />
               <Text style={{ fontSize: 12, fontWeight: '700', color: answerFeedback.isCorrect ? '#ffffff' : '#fda4af' }}>
                 {answerFeedback.isCorrect
@@ -922,26 +922,26 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
       {/* ========================================================================= */}
       {gameState === 'ROUND_RESULT' && roundResult && (
         <ScrollView contentContainerStyle={{ padding: 20 }}>
-          <View style={{ backgroundColor: '#071f17', borderRadius: 20, borderWidth: 1.5, borderColor: '#10b981', padding: 20, alignItems: 'center', marginBottom: 20 }}>
+          <View style={{ backgroundColor: '#251a02', borderRadius: 20, borderWidth: 1.5, borderColor: '#f59e0b', padding: 20, alignItems: 'center', marginBottom: 20 }}>
             <Ionicons
               name={selectedOption === roundResult.correctIndex ? 'checkmark-circle' : 'hourglass-outline'}
               size={40}
-              color={selectedOption === roundResult.correctIndex ? '#10b981' : '#f59e0b'}
+              color={selectedOption === roundResult.correctIndex ? '#f59e0b' : '#f59e0b'}
             />
             <Text style={{ fontSize: 18, fontWeight: '900', color: '#ffffff', marginTop: 8 }}>
               {selectedOption === roundResult.correctIndex
                 ? isTamil ? 'அருமை! சரியான விடை' : 'Spot On!'
                 : isTamil ? 'சுற்று நிறைவு பெற்றது' : 'Round Complete'}
             </Text>
-            <Text style={{ fontSize: 12, fontWeight: '700', color: '#34d399', marginTop: 4 }}>
+            <Text style={{ fontSize: 12, fontWeight: '700', color: '#fbbf24', marginTop: 4 }}>
               {isTamil ? 'சரியான விடை:' : 'Correct Answer:'} {activeQuestion?.options[roundResult.correctIndex]}
             </Text>
           </View>
 
-          <Text style={{ fontSize: 12, fontWeight: '700', color: '#a7f3d0', marginBottom: 8, textTransform: 'uppercase' }}>
+          <Text style={{ fontSize: 12, fontWeight: '700', color: '#fde68a', marginBottom: 8, textTransform: 'uppercase' }}>
             {isTamil ? 'சுற்று நிலவரம் (Leaderboard)' : 'Live Round Leaderboard'}
           </Text>
-          <View style={{ backgroundColor: '#071f17', borderWidth: 1, borderColor: '#0f5139', borderRadius: 16, padding: 12, gap: 8 }}>
+          <View style={{ backgroundColor: '#251a02', borderWidth: 1, borderColor: '#523a00', borderRadius: 16, padding: 12, gap: 8 }}>
             {roundResult.leaderboard?.map((p: any, i: number) => (
               <View
                 key={i}
@@ -952,14 +952,14 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                   paddingVertical: 8,
                   paddingHorizontal: 8,
                   borderRadius: 10,
-                  backgroundColor: p.userId === user.id ? '#063728' : 'transparent',
+                  backgroundColor: p.userId === user.id ? '#342400' : 'transparent',
                 }}
               >
                 <Text style={{ fontWeight: '800', color: '#facc15', width: 28 }}>#{p.rank}</Text>
                 <Text style={{ flex: 1, color: '#ffffff', fontSize: 12, fontWeight: '700' }}>
                   {p.name} {p.userId === user.id ? (isTamil ? '(நீங்கள்)' : '(You)') : ''}
                 </Text>
-                <Text style={{ color: '#34d399', fontSize: 12, fontWeight: '900' }}>{p.score} pts</Text>
+                <Text style={{ color: '#fbbf24', fontSize: 12, fontWeight: '900' }}>{p.score} pts</Text>
               </View>
             ))}
           </View>
@@ -989,9 +989,9 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
           </Text>
 
           {/* Pending Standings Card */}
-          <View style={{ width: '100%', marginTop: 20, backgroundColor: '#071f17', borderWidth: 1.5, borderColor: '#0f5139', borderRadius: 20, padding: 16 }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10, borderBottomWidth: 1, borderBottomColor: '#0a3827', paddingBottom: 8 }}>
-              <Text style={{ fontSize: 11, fontWeight: '700', color: '#a7f3d0', textTransform: 'uppercase' }}>
+          <View style={{ width: '100%', marginTop: 20, backgroundColor: '#251a02', borderWidth: 1.5, borderColor: '#523a00', borderRadius: 20, padding: 16 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10, borderBottomWidth: 1, borderBottomColor: '#3f2e00', paddingBottom: 8 }}>
+              <Text style={{ fontSize: 11, fontWeight: '700', color: '#fde68a', textTransform: 'uppercase' }}>
                 {isTamil ? 'தற்காலிக நிலை (மதிப்பாய்வில்)' : 'Tentative Standings (Under Review)'}
               </Text>
               <Text style={{ fontSize: 11, fontWeight: '800', color: '#facc15' }}>Prize Pool: ₹{room.prizePool}</Text>
@@ -1008,7 +1008,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                     paddingVertical: 6,
                     paddingHorizontal: 8,
                     borderRadius: 8,
-                    backgroundColor: p.userId === user?.id ? '#063728' : 'transparent',
+                    backgroundColor: p.userId === user?.id ? '#342400' : 'transparent',
                   }}
                 >
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
@@ -1017,15 +1017,15 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                       {p.name} {p.userId === user?.id ? (isTamil ? '(நீங்கள்)' : '(You)') : ''}
                     </Text>
                   </View>
-                  <Text style={{ color: '#34d399', fontSize: 12, fontWeight: '900' }}>{p.score || 180 - idx * 25} pts</Text>
+                  <Text style={{ color: '#fbbf24', fontSize: 12, fontWeight: '900' }}>{p.score || 180 - idx * 25} pts</Text>
                 </View>
               ))}
             </View>
           </View>
 
-          <View style={{ marginTop: 16, padding: 12, backgroundColor: '#062d21', borderWidth: 1, borderColor: '#10b981', borderRadius: 14, width: '100%', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-            <Ionicons name="notifications-outline" size={18} color="#10b981" />
-            <Text style={{ color: '#a7f3d0', fontSize: 11, fontWeight: '600', flex: 1 }}>
+          <View style={{ marginTop: 16, padding: 12, backgroundColor: '#2d1b06', borderWidth: 1, borderColor: '#f59e0b', borderRadius: 14, width: '100%', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <Ionicons name="notifications-outline" size={18} color="#f59e0b" />
+            <Text style={{ color: '#fde68a', fontSize: 11, fontWeight: '600', flex: 1 }}>
               {isTamil
                 ? 'நிர்வாகி முடிவுகளை வெளியிட்டவுடன் இந்த திரை தானாக வெற்றியாளர் மேடைக்கு மாறும்.'
                 : 'This screen will automatically transition to the victory podium the moment the admin releases results.'}
@@ -1055,9 +1055,9 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                 <View
                   key={idx}
                   style={{
-                    backgroundColor: idx === 0 ? '#0a3d2e' : '#071f17',
+                    backgroundColor: idx === 0 ? '#0a3d2e' : '#251a02',
                     borderWidth: 1.5,
-                    borderColor: idx === 0 ? '#facc15' : '#0f5139',
+                    borderColor: idx === 0 ? '#facc15' : '#523a00',
                     borderRadius: 16,
                     padding: 14,
                     flexDirection: 'row',
@@ -1065,7 +1065,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                     gap: 12,
                   }}
                 >
-                  <View style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#052017', alignItems: 'center', justifyContent: 'center' }}>
+                  <View style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#1a1103', alignItems: 'center', justifyContent: 'center' }}>
                     <Ionicons name="medal" size={22} color={medalColor} />
                   </View>
                   <View style={{ flex: 1 }}>
@@ -1074,7 +1074,7 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
                       {item.score || 200 - idx * 30} Points • Rank #{idx + 1}
                     </Text>
                   </View>
-                  <View style={{ backgroundColor: '#10b981', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 8 }}>
+                  <View style={{ backgroundColor: '#f59e0b', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 8 }}>
                     <Text style={{ color: '#ffffff', fontSize: 11, fontWeight: '900' }}>+₹{item.prizeWon || prizes[idx]} WON</Text>
                   </View>
                 </View>
@@ -1082,11 +1082,11 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
             })}
           </View>
 
-          <View style={{ marginTop: 20, backgroundColor: '#062d21', borderWidth: 1, borderColor: '#10b981', padding: 12, borderRadius: 14, width: '100%', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-            <Ionicons name="wallet-outline" size={20} color="#10b981" />
-            <Text style={{ color: '#a7f3d0', fontSize: 11, fontWeight: '600', flex: 1 }}>
+          <View style={{ marginTop: 20, backgroundColor: '#2d1b06', borderWidth: 1, borderColor: '#f59e0b', padding: 12, borderRadius: 14, width: '100%', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <Ionicons name="wallet-outline" size={20} color="#f59e0b" />
+            <Text style={{ color: '#fde68a', fontSize: 11, fontWeight: '600', flex: 1 }}>
               {isTamil
-                ? 'வெற்றி பெற்ற ரொக்கப் பரிசுகள் உடனடியாக உங்கள் Quiz Arena Wallet-ல் வரவு வைக்கப்பட்டது!'
+                ? 'வெற்றி பெற்ற ரொக்கப் பரிசுகள் உடனடியாக உங்கள் Set Quick Trade Wallet-ல் வரவு வைக்கப்பட்டது!'
                 : 'Cash prizes won have been instantly credited to your wallet balance!'}
             </Text>
           </View>
@@ -1097,9 +1097,9 @@ export default function QuizArenaScreen({ room, user, onExit }: QuizArenaScreenP
             style={{
               marginTop: 20,
               width: '100%',
-              backgroundColor: '#10b981',
+              backgroundColor: '#f59e0b',
               borderBottomWidth: 4,
-              borderBottomColor: '#047857',
+              borderBottomColor: '#b45309',
               borderRadius: 16,
               paddingVertical: 13,
               alignItems: 'center',

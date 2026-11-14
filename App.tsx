@@ -20,7 +20,7 @@ import {
   NotoSansTamil_600SemiBold,
   NotoSansTamil_700Bold,
 } from '@expo-google-fonts/noto-sans-tamil';
-import { authService, getStoredToken } from './src/services';
+import { authService, getStoredToken, centralWalletStore } from './src/services';
 import AuthScreen from './src/screens/AuthScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import QuizArenaScreen from './src/screens/QuizArenaScreen';
@@ -89,6 +89,11 @@ function AppContent() {
   }, []);
 
   const handleLoginSuccess = (user: any) => {
+    if (user && typeof user.walletBalance === 'number' && user.walletBalance > 0) {
+      centralWalletStore.setBalance(user.walletBalance);
+    } else {
+      user.walletBalance = centralWalletStore.getBalance();
+    }
     setCurrentUser(user);
     switchScreen('HOME');
   };
@@ -104,24 +109,25 @@ function AppContent() {
   };
 
   const handleBalanceUpdated = (newBalance: number) => {
+    centralWalletStore.setBalance(newBalance);
     if (currentUser) {
-      setCurrentUser({ ...currentUser, walletBalance: newBalance });
+      setCurrentUser((prev: any) => (prev ? { ...prev, walletBalance: newBalance } : prev));
     }
   };
 
   if (checkingAuth || !fontsLoaded) {
     return (
-      <View style={{ flex: 1, backgroundColor: '#010805', alignItems: 'center', justifyContent: 'center' }}>
-        <Ionicons name="flash" size={44} color="#10b981" />
-        <Text style={{ fontSize: 13, fontWeight: '800', color: '#6ee7b7', marginTop: 14, letterSpacing: 0.5 }}>
-          Initializing Quiz Arena HD...
+      <View style={{ flex: 1, backgroundColor: '#050a08', alignItems: 'center', justifyContent: 'center' }}>
+        <Ionicons name="flash" size={44} color="#00e676" />
+        <Text style={{ fontSize: 13, fontWeight: '800', color: '#69f0ae', marginTop: 14, letterSpacing: 0.5 }}>
+          Initializing QuickTrade...
         </Text>
       </View>
     );
   }
 
   return (
-    <View style={{ flex: 1, width: '100%', height: '100%', maxHeight: Platform.OS === 'web' ? ('100vh' as any) : undefined, backgroundColor: '#010805', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+    <View style={{ flex: 1, width: '100%', height: '100%', maxHeight: Platform.OS === 'web' ? ('100vh' as any) : undefined, backgroundColor: '#020604', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
       <View
         style={{
           width: '100%',
@@ -131,13 +137,13 @@ function AppContent() {
           flex: 1,
           minHeight: 0,
           paddingTop: Platform.OS === 'ios' ? insets.top : 0,
-          backgroundColor: '#03130e',
+          backgroundColor: '#030705',
           borderLeftWidth: 1,
           borderRightWidth: 1,
-          borderColor: '#0a3827',
-          shadowColor: '#10b981',
+          borderColor: '#112219',
+          shadowColor: '#00e676',
           shadowOffset: { width: 0, height: 10 },
-          shadowOpacity: 0.15,
+          shadowOpacity: 0.25,
           shadowRadius: 25,
           elevation: 8,
           display: 'flex',
@@ -146,7 +152,7 @@ function AppContent() {
           overflow: 'hidden',
         }}
       >
-        <StatusBar style="light" backgroundColor="#041711" translucent={false} />
+        <StatusBar style="light" backgroundColor="#030705" translucent={false} />
 
         {Platform.OS === 'web' && (
           <style dangerouslySetInnerHTML={{ __html: `
@@ -157,7 +163,7 @@ function AppContent() {
               margin: 0 !important;
               padding: 0 !important;
               overflow: hidden !important;
-              background-color: #010805 !important;
+              background-color: #020604 !important;
             }
             body, #root, input, textarea, button, select, p, span, div, h1, h2, h3, h4, h5, h6 {
               font-family: 'Plus Jakarta Sans', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -228,6 +234,7 @@ function AppContent() {
             )
           ) : currentScreen === 'WALLET' ? (
             <WalletScreen
+              user={currentUser}
               onBack={() => switchScreen('HOME')}
               onBalanceUpdated={handleBalanceUpdated}
             />
@@ -245,16 +252,16 @@ function AppContent() {
           ) : null}
         </Animated.View>
 
-        {/* Persistent Vector-Icon Mobile Bottom Navigation Bar (Cyberpunk Emerald) */}
+        {/* Persistent Vector-Icon Mobile Bottom Navigation Bar (Cyberpunk Gold) */}
         {currentUser && currentScreen !== 'ARENA' && (
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-around',
               alignItems: 'center',
-              backgroundColor: '#020d09',
+              backgroundColor: '#0d0701',
               borderTopWidth: 1,
-              borderTopColor: '#072b1e',
+              borderTopColor: '#2d1f00',
               paddingTop: 8,
               paddingBottom: Math.max(6, Math.min(insets.bottom, 10)),
               paddingHorizontal: 16,
@@ -269,14 +276,14 @@ function AppContent() {
               <Ionicons
                 name={currentScreen === 'HOME' ? 'game-controller' : 'game-controller-outline'}
                 size={23}
-                color={currentScreen === 'HOME' ? '#00ff88' : '#cbd5e1'}
+                color={currentScreen === 'HOME' ? '#ffd700' : '#cbd5e1'}
               />
               <Text
                 style={{
                   fontSize: 11,
                   fontWeight: currentScreen === 'HOME' ? '900' : '600',
                   marginTop: 3,
-                  color: currentScreen === 'HOME' ? '#00ff88' : '#cbd5e1',
+                  color: currentScreen === 'HOME' ? '#ffd700' : '#cbd5e1',
                   letterSpacing: 0.3,
                 }}
               >
@@ -287,10 +294,10 @@ function AppContent() {
                   style={{
                     width: 26,
                     height: 3,
-                    backgroundColor: '#00ff88',
+                    backgroundColor: '#ffd700',
                     borderRadius: 2,
                     marginTop: 4,
-                    shadowColor: '#00ff88',
+                    shadowColor: '#ffd700',
                     shadowOpacity: 1,
                     shadowRadius: 10,
                   }}
@@ -307,14 +314,14 @@ function AppContent() {
               <Ionicons
                 name={currentScreen === 'WALLET' ? 'wallet' : 'wallet-outline'}
                 size={23}
-                color={currentScreen === 'WALLET' ? '#00ff88' : '#cbd5e1'}
+                color={currentScreen === 'WALLET' ? '#ffd700' : '#cbd5e1'}
               />
               <Text
                 style={{
                   fontSize: 11,
                   fontWeight: currentScreen === 'WALLET' ? '900' : '600',
                   marginTop: 3,
-                  color: currentScreen === 'WALLET' ? '#00ff88' : '#cbd5e1',
+                  color: currentScreen === 'WALLET' ? '#ffd700' : '#cbd5e1',
                   letterSpacing: 0.3,
                 }}
               >
@@ -325,10 +332,10 @@ function AppContent() {
                   style={{
                     width: 26,
                     height: 3,
-                    backgroundColor: '#00ff88',
+                    backgroundColor: '#ffd700',
                     borderRadius: 2,
                     marginTop: 4,
-                    shadowColor: '#00ff88',
+                    shadowColor: '#ffd700',
                     shadowOpacity: 1,
                     shadowRadius: 10,
                   }}
@@ -345,14 +352,14 @@ function AppContent() {
               <Ionicons
                 name={currentScreen === 'PROFILE' ? 'person' : 'person-outline'}
                 size={23}
-                color={currentScreen === 'PROFILE' ? '#00ff88' : '#cbd5e1'}
+                color={currentScreen === 'PROFILE' ? '#ffd700' : '#cbd5e1'}
               />
               <Text
                 style={{
                   fontSize: 11,
                   fontWeight: currentScreen === 'PROFILE' ? '900' : '600',
                   marginTop: 3,
-                  color: currentScreen === 'PROFILE' ? '#00ff88' : '#cbd5e1',
+                  color: currentScreen === 'PROFILE' ? '#ffd700' : '#cbd5e1',
                   letterSpacing: 0.3,
                 }}
               >
@@ -363,10 +370,10 @@ function AppContent() {
                   style={{
                     width: 26,
                     height: 3,
-                    backgroundColor: '#00ff88',
+                    backgroundColor: '#ffd700',
                     borderRadius: 2,
                     marginTop: 4,
-                    shadowColor: '#00ff88',
+                    shadowColor: '#ffd700',
                     shadowOpacity: 1,
                     shadowRadius: 10,
                   }}

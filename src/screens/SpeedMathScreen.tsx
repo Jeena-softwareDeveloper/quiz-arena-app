@@ -137,7 +137,7 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#02160e', justifyContent: 'space-between', paddingBottom: 36 }}>
+    <View style={{ flex: 1, backgroundColor: '#120a01', justifyContent: 'space-between', paddingBottom: 36 }}>
       {/* Top Header */}
       <View
         style={{
@@ -147,9 +147,9 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
           paddingHorizontal: 20,
           paddingTop: 48,
           paddingBottom: 16,
-          backgroundColor: '#032417',
+          backgroundColor: '#181002',
           borderBottomWidth: 1,
-          borderBottomColor: '#0b4a35',
+          borderBottomColor: '#4a3500',
         }}
       >
         <TouchableOpacity
@@ -158,7 +158,7 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
             flexDirection: 'row',
             alignItems: 'center',
             gap: 6,
-            backgroundColor: '#053120',
+            backgroundColor: '#322300',
             paddingHorizontal: 12,
             paddingVertical: 6,
             borderRadius: 14,
@@ -177,7 +177,7 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
             style={{
               fontSize: 22,
               fontWeight: '900',
-              color: timeLeft <= 10 ? '#ef4444' : '#10b981',
+              color: timeLeft <= 10 ? '#ef4444' : '#f59e0b',
             }}
           >
             {timeLeft}s
@@ -188,7 +188,7 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
         <View style={{ alignItems: 'flex-end' }}>
           <Text style={{ fontSize: 20, fontWeight: '900', color: '#facc15' }}>{score}</Text>
           {streak > 1 && (
-            <Text style={{ fontSize: 11, fontWeight: '900', color: '#34d399' }}>
+            <Text style={{ fontSize: 11, fontWeight: '900', color: '#fbbf24' }}>
               Streak {streak}x 🔥
             </Text>
           )}
@@ -196,11 +196,11 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
       </View>
 
       {/* Fuse Bar */}
-      <View style={{ width: '100%', height: 4, backgroundColor: '#062d1f' }}>
+      <View style={{ width: '100%', height: 4, backgroundColor: '#241903' }}>
         <Animated.View
           style={{
             height: '100%',
-            backgroundColor: '#10b981',
+            backgroundColor: '#f59e0b',
             width: fuseAnim.interpolate({
               inputRange: [0, 1],
               outputRange: ['0%', '100%'],
@@ -214,12 +214,12 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
         <View
           style={{
             width: '100%',
-            backgroundColor: '#042519',
+            backgroundColor: '#1a1202',
             borderRadius: 24,
             paddingVertical: 36,
             alignItems: 'center',
             borderWidth: 1.5,
-            borderColor: isCorrect === true ? '#10b981' : isCorrect === false ? '#ef4444' : '#0b4a35',
+            borderColor: isCorrect === true ? '#f59e0b' : isCorrect === false ? '#ef4444' : '#4a3500',
             shadowColor: '#000000',
             shadowOffset: { width: 0, height: 4 },
             shadowOpacity: 0.3,
@@ -239,13 +239,13 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
           {problem?.options.slice(0, 2).map((opt, idx) => {
             const isSelected = selectedOption === opt;
             const isRight = opt === problem.correctAnswer;
-            let bgColor = '#052b1e';
-            let borderColor = '#0b4a35';
+            let bgColor = '#201603';
+            let borderColor = '#4a3500';
 
             if (selectedOption !== null) {
               if (isRight) {
-                bgColor = '#047857';
-                borderColor = '#10b981';
+                bgColor = '#b45309';
+                borderColor = '#f59e0b';
               } else if (isSelected) {
                 bgColor = '#b91c1c';
                 borderColor = '#ef4444';
@@ -277,13 +277,13 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
           {problem?.options.slice(2, 4).map((opt, idx) => {
             const isSelected = selectedOption === opt;
             const isRight = opt === problem.correctAnswer;
-            let bgColor = '#052b1e';
-            let borderColor = '#0b4a35';
+            let bgColor = '#201603';
+            let borderColor = '#4a3500';
 
             if (selectedOption !== null) {
               if (isRight) {
-                bgColor = '#047857';
-                borderColor = '#10b981';
+                bgColor = '#b45309';
+                borderColor = '#f59e0b';
               } else if (isSelected) {
                 bgColor = '#b91c1c';
                 borderColor = '#ef4444';
@@ -331,12 +331,12 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
             style={{
               width: '100%',
               maxWidth: 360,
-              backgroundColor: '#042217',
+              backgroundColor: '#191102',
               borderRadius: 24,
               padding: 28,
               alignItems: 'center',
               borderWidth: 1,
-              borderColor: '#0b4a35',
+              borderColor: '#4a3500',
             }}
           >
             <Text style={{ fontSize: 44, marginBottom: 8 }}>⚡</Text>
@@ -350,7 +350,7 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
             <View
               style={{
                 marginVertical: 20,
-                backgroundColor: '#073322',
+                backgroundColor: '#362600',
                 paddingHorizontal: 28,
                 paddingVertical: 12,
                 borderRadius: 16,
@@ -365,7 +365,7 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
               onPress={onExit}
               style={{
                 width: '100%',
-                backgroundColor: '#10b981',
+                backgroundColor: '#f59e0b',
                 paddingVertical: 14,
                 borderRadius: 16,
                 alignItems: 'center',
@@ -381,3 +381,4 @@ export default function SpeedMathScreen({ room, user, onExit }: SpeedMathProps) 
     </View>
   );
 }
+

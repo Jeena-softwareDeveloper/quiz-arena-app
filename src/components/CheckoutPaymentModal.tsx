@@ -83,7 +83,9 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
 
   return (
     <Modal visible={isOpen} transparent animationType="fade" onRequestClose={onClose}>
-      <View
+      <TouchableOpacity
+        activeOpacity={1}
+        onPress={onClose}
         style={{
           flex: 1,
           backgroundColor: 'rgba(1, 8, 5, 0.85)',
@@ -91,11 +93,13 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
           alignItems: 'center',
         }}
       >
-        <View
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={(e) => e.stopPropagation()}
           style={{
             width: '100%',
             maxWidth: 430,
-            backgroundColor: '#071f17',
+            backgroundColor: '#251a02',
             borderTopLeftRadius: 28,
             borderTopRightRadius: 28,
             borderWidth: 0,
@@ -109,7 +113,7 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
           }}
         >
           {/* Top Notch Indicator */}
-          <View style={{ width: 44, height: 4, borderRadius: 2, backgroundColor: '#0f5139', alignSelf: 'center', marginBottom: 16 }} />
+          <View style={{ width: 44, height: 4, borderRadius: 2, backgroundColor: '#523a00', alignSelf: 'center', marginBottom: 16 }} />
 
           {/* Header */}
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
@@ -119,16 +123,17 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
             </View>
             <TouchableOpacity
               onPress={onClose}
-              style={{ width: 32, height: 32, borderRadius: 16, backgroundColor: '#052017', alignItems: 'center', justifyContent: 'center' }}
+              hitSlop={{ top: 15, bottom: 15, left: 15, right: 15 }}
+              style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: '#1a1103', alignItems: 'center', justifyContent: 'center' }}
             >
-              <Ionicons name="close" size={18} color="#94a3b8" />
+              <Ionicons name="close" size={20} color="#ffffff" />
             </TouchableOpacity>
           </View>
 
           {/* Tournament Summary Card */}
           <View
             style={{
-              backgroundColor: '#052017',
+              backgroundColor: '#1a1103',
               borderRadius: 18,
               padding: 16,
               borderWidth: 0,
@@ -136,8 +141,8 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
             }}
           >
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-              <View style={{ backgroundColor: '#063728', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 6 }}>
-                <Text style={{ fontSize: 10, fontWeight: '800', color: '#34d399' }}>{room.category}</Text>
+              <View style={{ backgroundColor: '#342400', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 6 }}>
+                <Text style={{ fontSize: 10, fontWeight: '800', color: '#fbbf24' }}>{room.category}</Text>
               </View>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: '#451a03', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 6 }}>
                 <Ionicons name="trophy" size={11} color="#facc15" />
@@ -147,12 +152,12 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
 
             <Text style={{ fontSize: 15, fontWeight: '700', color: '#ffffff', lineHeight: 20 }}>{room.title}</Text>
 
-            <View style={{ marginTop: 10, paddingTop: 10, borderTopWidth: 1, borderTopColor: '#0a3827', gap: 6 }}>
+            <View style={{ marginTop: 10, paddingTop: 10, borderTopWidth: 1, borderTopColor: '#3f2e00', gap: 6 }}>
               <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
-                  <Ionicons name="play" size={11} color="#10b981" />
+                  <Ionicons name="play" size={11} color="#f59e0b" />
                   <Text style={{ fontSize: 11, color: '#94a3b8' }}>
-                    {t('starts_at', 'Starts')}: <Text style={{ fontWeight: '700', color: '#34d399' }}>{formatScheduledTime(room.scheduledStartTime)}</Text>
+                    {t('starts_at', 'Starts')}: <Text style={{ fontWeight: '700', color: '#fbbf24' }}>{formatScheduledTime(room.scheduledStartTime)}</Text>
                   </Text>
                 </View>
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
@@ -169,19 +174,19 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
           </View>
 
           {/* Price Breakdown */}
-          <View style={{ backgroundColor: '#051b14', borderRadius: 16, padding: 14, borderWidth: 0, marginBottom: 16, gap: 8 }}>
+          <View style={{ backgroundColor: '#181002', borderRadius: 16, padding: 14, borderWidth: 0, marginBottom: 16, gap: 8 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
               <Text style={{ fontSize: 12, color: '#94a3b8' }}>{t('entry_fee_due')}</Text>
               <Text style={{ fontSize: 12, fontWeight: '700', color: '#ffffff' }}>₹{entryFee.toFixed(2)}</Text>
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
               <Text style={{ fontSize: 12, color: '#94a3b8' }}>{t('platform_fee')}</Text>
-              <Text style={{ fontSize: 12, fontWeight: '700', color: '#34d399' }}>₹0.00 (FREE)</Text>
+              <Text style={{ fontSize: 12, fontWeight: '700', color: '#fbbf24' }}>₹0.00 (FREE)</Text>
             </View>
-            <View style={{ height: 1, backgroundColor: '#0c3d2c', marginVertical: 2 }} />
+            <View style={{ height: 1, backgroundColor: '#453200', marginVertical: 2 }} />
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
               <Text style={{ fontSize: 13, fontWeight: '800', color: '#ffffff' }}>{t('total_payable')}</Text>
-              <Text style={{ fontSize: 17, fontWeight: '900', color: '#34d399' }}>₹{entryFee.toFixed(2)}</Text>
+              <Text style={{ fontSize: 17, fontWeight: '900', color: '#fbbf24' }}>₹{entryFee.toFixed(2)}</Text>
             </View>
           </View>
 
@@ -191,7 +196,7 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
               flexDirection: 'row',
               justifyContent: 'space-between',
               alignItems: 'center',
-              backgroundColor: isBalanceSufficient ? '#06281e' : '#450a0a',
+              backgroundColor: isBalanceSufficient ? '#221804' : '#450a0a',
               borderRadius: 14,
               borderWidth: 0,
               padding: 12,
@@ -202,13 +207,13 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
               <Ionicons
                 name={isBalanceSufficient ? 'wallet' : 'alert-circle'}
                 size={18}
-                color={isBalanceSufficient ? '#10b981' : '#f87171'}
+                color={isBalanceSufficient ? '#f59e0b' : '#f87171'}
               />
               <View>
-                <Text style={{ fontSize: 11, color: isBalanceSufficient ? '#a7f3d0' : '#fca5a5' }}>
+                <Text style={{ fontSize: 11, color: isBalanceSufficient ? '#fde68a' : '#fca5a5' }}>
                   {t('wallet_balance')}: ₹{currentBalance.toFixed(2)}
                 </Text>
-                <Text style={{ fontSize: 11, fontWeight: '700', color: isBalanceSufficient ? '#34d399' : '#f87171' }}>
+                <Text style={{ fontSize: 11, fontWeight: '700', color: isBalanceSufficient ? '#fbbf24' : '#f87171' }}>
                   {isBalanceSufficient
                     ? `${t('balance_after')}: ₹${balanceAfter.toFixed(2)}`
                     : t('insufficient_balance')}
@@ -239,16 +244,16 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
             disabled={loading || !isBalanceSufficient}
             activeOpacity={0.85}
             style={{
-              backgroundColor: isBalanceSufficient ? '#10b981' : '#475569',
+              backgroundColor: isBalanceSufficient ? '#f59e0b' : '#475569',
               borderBottomWidth: 4,
-              borderBottomColor: isBalanceSufficient ? '#047857' : '#334155',
+              borderBottomColor: isBalanceSufficient ? '#b45309' : '#334155',
               borderRadius: 16,
               paddingVertical: 14,
               alignItems: 'center',
               justifyContent: 'center',
               flexDirection: 'row',
               gap: 8,
-              shadowColor: isBalanceSufficient ? '#10b981' : 'transparent',
+              shadowColor: isBalanceSufficient ? '#f59e0b' : 'transparent',
               shadowOffset: { width: 0, height: 6 },
               shadowOpacity: 0.5,
               shadowRadius: 16,
@@ -266,8 +271,8 @@ export const CheckoutPaymentModal: React.FC<CheckoutPaymentModalProps> = ({
               </>
             )}
           </TouchableOpacity>
-        </View>
-      </View>
+        </TouchableOpacity>
+      </TouchableOpacity>
     </Modal>
   );
 };

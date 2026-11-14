@@ -1,18 +1,21 @@
 import { api, saveToken, clearToken } from './api';
 
 export interface LoginPayload {
-  phone: string;
+  email?: string;
+  phone?: string;
   password: string;
 }
 
 export interface RegisterPayload {
   name: string;
-  phone: string;
+  email?: string;
+  phone?: string;
   password: string;
-  educationLevel: string;
-  interests: string[];
+  educationLevel?: string;
+  interests?: string[];
   languagePreference?: string;
 }
+
 
 export interface AuthResponse {
   user: any;

@@ -1,26 +1,28 @@
 /**
  * Centralized Design System Tokens for Mobile App
- * Light Theme + Signature Emerald/Green
+ * Theme: Signature Yellow & Gold
  */
 export const THEME = {
   colors: {
-    primary: '#059669', // emerald-600
-    primaryLight: '#ecfdf5', // emerald-50
-    primaryDark: '#047857', // emerald-700
-    background: '#f8fafc', // slate-50
-    surface: '#ffffff', // white
-    border: '#e2e8f0', // slate-200
+    primary: '#f59e0b', // amber-500 / gold
+    primaryLight: '#fffbeb', // amber-50 / soft gold
+    primaryDark: '#d97706', // amber-600 / rich gold
+    background: '#0a0700', // dark gold / black
+    surface: '#120a01', // dark card background
+    border: '#3f2e00', // gold border
     text: {
-      primary: '#0f172a', // slate-900
-      secondary: '#475569', // slate-600
-      muted: '#94a3b8', // slate-400
+      primary: '#ffffff',
+      secondary: '#fde68a', // soft gold text
+      muted: '#94a3b8',
     },
     accent: {
-      amber: '#d97706', // amber-600
-      amberLight: '#fffbeb', // amber-50
-      sky: '#0284c7', // sky-600
-      rose: '#e11d48', // rose-600
-      roseLight: '#fff1f2', // rose-50
+      gold: '#f59e0b',
+      goldLight: '#fde68a',
+      amber: '#d97706',
+      amberLight: '#fffbeb',
+      sky: '#0284c7',
+      rose: '#e11d48',
+      roseLight: '#fff1f2',
     },
   },
 };

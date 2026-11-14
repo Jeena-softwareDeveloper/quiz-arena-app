@@ -94,16 +94,16 @@ export const LiveCountdown: React.FC<LiveCountdownProps> = ({
               width: 7,
               height: 7,
               borderRadius: 4,
-              backgroundColor: isClosed ? '#ef4444' : '#10b981',
+              backgroundColor: isClosed ? '#ef4444' : '#f59e0b',
               opacity: isClosed ? 0.7 : pulseAnim,
-              shadowColor: isClosed ? '#ef4444' : '#10b981',
+              shadowColor: isClosed ? '#ef4444' : '#f59e0b',
               shadowOpacity: 0.8,
               shadowRadius: 6,
             }}
           />
           <Text
             style={{
-              color: isClosed ? '#f87171' : '#34d399',
+              color: isClosed ? '#f87171' : '#fbbf24',
               fontSize: 12,
               fontWeight: '800',
               letterSpacing: 0.5,
@@ -126,9 +126,9 @@ export const LiveCountdown: React.FC<LiveCountdownProps> = ({
         style={[
           styles.lightContainer,
           {
-            backgroundColor: isClosed ? '#fef2f2' : '#ecfdf5',
-            borderColor: isClosed ? '#fecaca' : '#a7f3d0',
-            borderBottomColor: isClosed ? '#dc2626' : '#059669',
+            backgroundColor: isClosed ? '#fef2f2' : '#fffbeb',
+            borderColor: isClosed ? '#fecaca' : '#fde68a',
+            borderBottomColor: isClosed ? '#dc2626' : '#d97706',
             borderBottomWidth: 2,
           },
         ]}
@@ -138,14 +138,14 @@ export const LiveCountdown: React.FC<LiveCountdownProps> = ({
             width: 7,
             height: 7,
             borderRadius: 4,
-            backgroundColor: isClosed ? '#dc2626' : '#059669',
+            backgroundColor: isClosed ? '#dc2626' : '#d97706',
             opacity: isClosed ? 0.7 : pulseAnim,
           }}
         />
         <Text
           style={[
             styles.lightText,
-            { color: isClosed ? '#991b1b' : '#065f46', fontWeight: '800' },
+            { color: isClosed ? '#991b1b' : '#92400e', fontWeight: '800' },
           ]}
         >
           {isClosed

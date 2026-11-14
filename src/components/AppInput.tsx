@@ -25,7 +25,7 @@ export const AppInput: React.FC<AppInputProps> = ({
           style={{
             fontSize: 12,
             fontWeight: '800',
-            color: dark ? '#a7f3d0' : '#334155',
+            color: dark ? '#fde68a' : '#334155',
             letterSpacing: 0.8,
             textTransform: 'uppercase',
             marginBottom: 7,
@@ -37,9 +37,9 @@ export const AppInput: React.FC<AppInputProps> = ({
       <TextInput
         style={[
           {
-            backgroundColor: dark ? '#041d14' : '#ffffff',
+            backgroundColor: dark ? '#160e02' : '#ffffff',
             borderWidth: 1.5,
-            borderColor: error ? '#f43f5e' : dark ? '#0b4a35' : '#cbd5e1',
+            borderColor: error ? '#f43f5e' : dark ? '#4d3800' : '#cbd5e1',
             borderRadius: 14,
             paddingHorizontal: 16,
             paddingVertical: 13,

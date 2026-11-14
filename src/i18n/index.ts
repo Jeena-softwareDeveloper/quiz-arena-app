@@ -4,7 +4,7 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
-      app_name: 'Quiz Arena',
+      app_name: 'QuickTrade',
       skill_tournaments: 'Skill Tournament Arena',
       enter_battles: 'Enter live battles and win cash prizes',
       arenas_tab: 'Arenas',
@@ -47,7 +47,7 @@ const resources = {
       platform_fee: 'Platform Fee (0%)',
       total_payable: 'Total Payable',
       payment_source: 'Payment Method',
-      wallet_payment: 'Quiz Arena Cash Wallet',
+      wallet_payment: 'Set Quick Trade Cash Wallet',
       available_balance: 'Available Balance',
       insufficient_balance: 'Insufficient Balance. Please recharge your wallet.',
       recharge_now: 'Quick Recharge +₹50',

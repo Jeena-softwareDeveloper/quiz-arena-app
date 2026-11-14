@@ -25,14 +25,14 @@ export const AppButton: React.FC<AppButtonProps> = ({
   icon,
 }) => {
   const variantStyles = {
-    primary: 'bg-emerald-600 active:bg-emerald-700 shadow-sm',
+    primary: 'bg-amber-500 active:bg-amber-600 shadow-sm',
     secondary: 'bg-slate-100 active:bg-slate-200 border border-slate-200',
     outline: 'bg-white active:bg-slate-50 border border-slate-300 shadow-sm',
     danger: 'bg-rose-50 active:bg-rose-100 border border-rose-200',
   };
 
   const textStyles = {
-    primary: 'text-white',
+    primary: 'text-slate-950 font-bold',
     secondary: 'text-slate-800',
     outline: 'text-slate-800',
     danger: 'text-rose-700',
@@ -48,7 +48,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
       activeOpacity={0.8}
     >
       {loading ? (
-        <ActivityIndicator color={variant === 'primary' ? '#ffffff' : '#059669'} size="small" />
+        <ActivityIndicator color={variant === 'primary' ? '#0a0700' : '#d97706'} size="small" />
       ) : (
         <View className="flex-row items-center justify-center gap-2">
           {icon}

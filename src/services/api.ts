@@ -34,7 +34,10 @@ const getHostAddress = (): string => {
     }
   }
 
-  // Fallback to active workstation IP on local network
+  // Fallback for Android emulator or workstation IP
+  if (Platform.OS === 'android') {
+    return 'http://10.0.2.2:5000';
+  }
   return 'http://192.23.1.53:5000';
 };
 
@@ -108,3 +111,5 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+export default api;

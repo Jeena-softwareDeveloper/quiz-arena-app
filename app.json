@@ -1,21 +1,21 @@
 {
   "expo": {
-    "name": "Quiz Arena",
-    "slug": "quiz-arena",
+    "name": "QuickTrade",
+    "slug": "quick-trade",
     "version": "1.0.0",
     "newArchEnabled": true,
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
     "splash": {
       "resizeMode": "contain",
-      "backgroundColor": "#090d16"
+      "backgroundColor": "#030705"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#090d16"
+        "backgroundColor": "#030705"
       }
     },
     "web": {

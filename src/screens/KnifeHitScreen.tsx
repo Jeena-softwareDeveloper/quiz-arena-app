@@ -112,7 +112,7 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
   });
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#02160e', justifyContent: 'space-between', paddingBottom: 36 }}>
+    <View style={{ flex: 1, backgroundColor: '#120a01', justifyContent: 'space-between', paddingBottom: 36 }}>
       {/* Top Header */}
       <View
         style={{
@@ -122,9 +122,9 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
           paddingHorizontal: 20,
           paddingTop: 48,
           paddingBottom: 16,
-          backgroundColor: '#032417',
+          backgroundColor: '#181002',
           borderBottomWidth: 1,
-          borderBottomColor: '#0b4a35',
+          borderBottomColor: '#4d3800',
         }}
       >
         <TouchableOpacity
@@ -133,7 +133,7 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
             flexDirection: 'row',
             alignItems: 'center',
             gap: 6,
-            backgroundColor: '#053120',
+            backgroundColor: '#322300',
             paddingHorizontal: 12,
             paddingVertical: 6,
             borderRadius: 14,
@@ -148,7 +148,7 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
         {/* Stage Badge */}
         <View style={{ alignItems: 'center' }}>
           <Text style={{ fontSize: 10, color: '#94a3b8', fontWeight: '800' }}>STAGE</Text>
-          <Text style={{ fontSize: 18, fontWeight: '900', color: '#10b981' }}>{stage}</Text>
+          <Text style={{ fontSize: 18, fontWeight: '900', color: '#f59e0b' }}>{stage}</Text>
         </View>
 
         {/* Score */}
@@ -194,8 +194,8 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
         </Animated.View>
 
         {wonStage && (
-          <View style={{ marginTop: 20, backgroundColor: '#064e3b', paddingHorizontal: 16, paddingVertical: 6, borderRadius: 12 }}>
-            <Text style={{ color: '#34d399', fontWeight: '900', fontSize: 14 }}>STAGE CLEARED! 🔥</Text>
+          <View style={{ marginTop: 20, backgroundColor: '#78350f', paddingHorizontal: 16, paddingVertical: 6, borderRadius: 12 }}>
+            <Text style={{ color: '#fbbf24', fontWeight: '900', fontSize: 14 }}>STAGE CLEARED! 🔥</Text>
           </View>
         )}
       </View>
@@ -216,7 +216,7 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
                 width: 8,
                 height: 20,
                 borderRadius: 4,
-                backgroundColor: idx < knivesLeft ? '#10b981' : '#1e293b',
+                backgroundColor: idx < knivesLeft ? '#f59e0b' : '#1e293b',
               }}
             />
           ))}
@@ -229,11 +229,11 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
           activeOpacity={0.8}
           style={{
             width: SCREEN_WIDTH - 48,
-            backgroundColor: '#10b981',
+            backgroundColor: '#f59e0b',
             paddingVertical: 16,
             borderRadius: 20,
             alignItems: 'center',
-            shadowColor: '#10b981',
+            shadowColor: '#f59e0b',
             shadowOpacity: 0.5,
             shadowRadius: 10,
             elevation: 6,
@@ -264,12 +264,12 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
             style={{
               width: '100%',
               maxWidth: 360,
-              backgroundColor: '#042217',
+              backgroundColor: '#191102',
               borderRadius: 24,
               padding: 28,
               alignItems: 'center',
               borderWidth: 1,
-              borderColor: '#0b4a35',
+              borderColor: '#4d3800',
             }}
           >
             <Text style={{ fontSize: 44, marginBottom: 8 }}>💥</Text>
@@ -283,7 +283,7 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
             <View
               style={{
                 marginVertical: 20,
-                backgroundColor: '#073322',
+                backgroundColor: '#362600',
                 paddingHorizontal: 28,
                 paddingVertical: 12,
                 borderRadius: 16,
@@ -298,7 +298,7 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
               onPress={onExit}
               style={{
                 width: '100%',
-                backgroundColor: '#10b981',
+                backgroundColor: '#f59e0b',
                 paddingVertical: 14,
                 borderRadius: 16,
                 alignItems: 'center',
@@ -314,3 +314,4 @@ export default function KnifeHitScreen({ room, user, onExit }: KnifeHitProps) {
     </View>
   );
 }
+

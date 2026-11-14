@@ -17,7 +17,7 @@ interface ProfileScreenProps {
 }
 
 /**
- * Mobile User Profile & Matchmaking Settings Screen (Cyberpunk Emerald Dark Theme)
+ * Mobile User Profile & Matchmaking Settings Screen (Cyberpunk Gold Dark Theme)
  */
 export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout }: ProfileScreenProps) {
   const [name, setName] = useState(user?.name || '');
@@ -85,7 +85,7 @@ export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#03130e' }}>
+    <View style={{ flex: 1, backgroundColor: '#120a01' }}>
       {/* Top Header */}
       <View
         style={{
@@ -95,9 +95,9 @@ export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout
           paddingTop: 4,
           paddingBottom: 6,
           paddingHorizontal: 16,
-          backgroundColor: '#041711',
+          backgroundColor: '#140c02',
           borderBottomWidth: 1,
-          borderBottomColor: '#0a3827',
+          borderBottomColor: '#3f2e00',
         }}
       >
         <TouchableOpacity
@@ -110,12 +110,12 @@ export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout
             borderRadius: 10,
             backgroundColor: '#07251c',
             borderWidth: 1,
-            borderColor: '#10b981',
+            borderColor: '#f59e0b',
           }}
           onPress={onBack}
           activeOpacity={0.7}
         >
-          <Ionicons name="arrow-back" size={16} color="#34d399" />
+          <Ionicons name="arrow-back" size={16} color="#fbbf24" />
           <Text style={{ color: '#ffffff', fontSize: 12, fontWeight: '700' }}>Back</Text>
         </TouchableOpacity>
 
@@ -127,14 +127,14 @@ export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout
         {/* User Card */}
         <View
           style={{
-            backgroundColor: '#071f17',
+            backgroundColor: '#251a02',
             borderRadius: 24,
             borderWidth: 1.5,
-            borderColor: '#10b981',
+            borderColor: '#f59e0b',
             padding: 20,
             alignItems: 'center',
             marginBottom: 20,
-            shadowColor: '#10b981',
+            shadowColor: '#f59e0b',
             shadowOffset: { width: 0, height: 8 },
             shadowOpacity: 0.35,
             shadowRadius: 18,
@@ -146,11 +146,11 @@ export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout
               width: 56,
               height: 56,
               borderRadius: 28,
-              backgroundColor: '#10b981',
+              backgroundColor: '#f59e0b',
               alignItems: 'center',
               justifyContent: 'center',
               marginBottom: 8,
-              shadowColor: '#10b981',
+              shadowColor: '#f59e0b',
               shadowOpacity: 0.6,
               shadowRadius: 10,
             }}
@@ -196,8 +196,8 @@ export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout
         {/* Education Level (Dynamic from API) */}
         <View style={{ marginBottom: 16 }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4 }}>
-            <Ionicons name="school-outline" size={14} color="#10b981" />
-            <Text style={{ fontSize: 12, fontWeight: '700', color: '#a7f3d0' }}>
+            <Ionicons name="school-outline" size={14} color="#f59e0b" />
+            <Text style={{ fontSize: 12, fontWeight: '700', color: '#fde68a' }}>
               Education Level (Matchmaking Engine)
             </Text>
           </View>
@@ -212,9 +212,9 @@ export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout
                   paddingHorizontal: 12,
                   paddingVertical: 6,
                   borderRadius: 10,
-                  backgroundColor: educationLevel === opt.value ? '#10b981' : '#052017',
+                  backgroundColor: educationLevel === opt.value ? '#f59e0b' : '#1a1103',
                   borderWidth: 1,
-                  borderColor: educationLevel === opt.value ? '#34d399' : '#0d4834',
+                  borderColor: educationLevel === opt.value ? '#fbbf24' : '#463100',
                 }}
                 onPress={() => setEducationLevel(opt.value)}
                 activeOpacity={0.7}
@@ -236,8 +236,8 @@ export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout
         {/* Exam Interests (Dynamic from API) */}
         <View style={{ marginBottom: 20 }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4 }}>
-            <Ionicons name="book-outline" size={14} color="#10b981" />
-            <Text style={{ fontSize: 12, fontWeight: '700', color: '#a7f3d0' }}>
+            <Ionicons name="book-outline" size={14} color="#f59e0b" />
+            <Text style={{ fontSize: 12, fontWeight: '700', color: '#fde68a' }}>
               Topic & Exam Interests
             </Text>
           </View>
@@ -251,9 +251,9 @@ export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout
                     paddingHorizontal: 12,
                     paddingVertical: 6,
                     borderRadius: 10,
-                    backgroundColor: isSelected ? '#10b981' : '#052017',
+                    backgroundColor: isSelected ? '#f59e0b' : '#1a1103',
                     borderWidth: 1,
-                    borderColor: isSelected ? '#34d399' : '#0d4834',
+                    borderColor: isSelected ? '#fbbf24' : '#463100',
                   }}
                   onPress={() => toggleInterest(cat)}
                   activeOpacity={0.7}
@@ -279,16 +279,16 @@ export default function ProfileScreen({ user, onBack, onProfileUpdated, onLogout
           disabled={saving}
           activeOpacity={0.85}
           style={{
-            backgroundColor: '#10b981',
+            backgroundColor: '#f59e0b',
             borderBottomWidth: 4,
-            borderBottomColor: '#047857',
+            borderBottomColor: '#b45309',
             borderRadius: 16,
             paddingVertical: 13,
             alignItems: 'center',
             justifyContent: 'center',
             flexDirection: 'row',
             gap: 8,
-            shadowColor: '#10b981',
+            shadowColor: '#f59e0b',
             shadowOffset: { width: 0, height: 6 },
             shadowOpacity: 0.5,
             shadowRadius: 16,
